@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: no-op-test-lineage-logistic-training1
+  namespace: default
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      containers:
+      - name: no-op
+        image: test-lineage-logistic-training1-docker
+        env:
+        - name: MODE
+          value: "no-op"
+      restartPolicy: Never

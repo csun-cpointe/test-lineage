@@ -1,0 +1,32 @@
+{
+    "name": "PySparkPipelineMessaging",
+    "package": "com.test",
+    "type": {
+      "name": "data-flow",
+      "implementation": "data-delivery-pyspark"
+    },
+    "dataLineage": false,
+    "steps": [
+      {
+        "name": "SparkSyncStep",
+        "type": "synchronous",
+        "alerting": {
+          "enabled": false
+        },
+        "provenance": {
+          "enabled": false
+        },
+        "dataProfiling": {
+          "enabled": false
+        },
+        "inbound": {
+          "type": "messaging",
+          "channelName": "PySparkInboundChannel"
+        },
+        "outbound": {
+          "type": "messaging",
+          "channelName": "PySparkOutboundChannel"
+        }
+      }
+   ]
+}
